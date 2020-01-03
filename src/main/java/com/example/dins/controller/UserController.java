@@ -55,7 +55,8 @@ public class UserController {
     }
 
     @PutMapping(value = "/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ApiResponse<User> update(@RequestBody User user) {
+    public ApiResponse<User> update(@RequestBody User user,@PathVariable Integer id) {
+        user.setId(id);
         return new ApiResponse<>(HttpStatus.OK,service.update(user));
     }
 

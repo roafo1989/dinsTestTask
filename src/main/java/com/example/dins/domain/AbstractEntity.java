@@ -13,10 +13,10 @@ import lombok.Setter;
 public class AbstractEntity {
     private Integer id;
     private String name;
+    @JsonIgnore
     public boolean isNew() {
         return getId() == null;
     }
-    @JsonIgnore
     public AbstractEntity(String name) {
         this.name = name;
     }

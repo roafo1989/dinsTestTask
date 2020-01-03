@@ -59,7 +59,8 @@ public class NoteController {
     }
 
     @PutMapping(value = "/update/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ApiResponse<Note> update(@RequestBody Note note, @RequestParam Integer userId) {
+    public ApiResponse<Note> update(@RequestBody Note note, @PathVariable Integer id, @RequestParam Integer userId) {
+        note.setId(id);
         return new ApiResponse<>(HttpStatus.OK,service.update(note,userId));
     }
 

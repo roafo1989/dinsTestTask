@@ -22,10 +22,12 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User save(User user) {
         if (user.isNew()) {
+            System.out.println("service: user is new");
             user.setId(counter.incrementAndGet());
             usersMap.put(user.getId(), user);
             return user;
         }
+        System.out.println("service: user is not new");
         return usersMap.computeIfPresent(user.getId(), (id, oldUser) -> user);
     }
 
