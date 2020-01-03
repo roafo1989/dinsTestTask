@@ -5,11 +5,7 @@ import com.example.dins.repository.UserRepository;
 import com.example.dins.util.exception.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
-
-import static com.example.dins.util.ValidationUtil.checkNotFound;
 import static com.example.dins.util.ValidationUtil.checkNotFoundWithId;
 
 @Service

@@ -1,6 +1,5 @@
 package com.example.dins.domain;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -28,7 +27,7 @@ public class User extends AbstractEntity {
         return getEmail().equals(user.getEmail()) &&
                 getNotes().equals(user.getNotes()) &&
                 getName().equalsIgnoreCase(user.getName()) &&
-                getId()==user.getId();
+                getId() == user.getId();
     }
 
     @Override
