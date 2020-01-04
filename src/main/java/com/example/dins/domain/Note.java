@@ -19,6 +19,11 @@ public class Note extends AbstractEntity {
         this.number = number;
     }
 
+    public Note(Integer id, String name, String number) {
+        super(id, name);
+        this.number = number;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

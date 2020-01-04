@@ -22,11 +22,17 @@ public class UserController {
         this.service = service;
     }
 
-    @GetMapping
+/*    @GetMapping
     public ApiResponse<List<User>> getAll(){
         List<User> users = service.getAll();
         return new ApiResponse<>(HttpStatus.OK,users);
+    }*/
+    @GetMapping
+    public List<User> getAll(){
+        List<User> users = service.getAll();
+        return users;
     }
+
 
     @GetMapping("/{id}")
     public ApiResponse<User> getById(@PathVariable Integer id) throws EntityNotFoundException {
